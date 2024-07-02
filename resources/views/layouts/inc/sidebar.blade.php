@@ -109,9 +109,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('buku.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Buku</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('user.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('anggota.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Anggota</p>
                             </a>
                         </li>
                     </ul>

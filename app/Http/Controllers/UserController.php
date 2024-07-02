@@ -6,6 +6,7 @@ use App\Models\Level;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Alert;
 
 class UserController extends Controller
 {
@@ -38,6 +39,7 @@ class UserController extends Controller
         $userData['password'] = bcrypt($request->password); // Enkripsi password
 
         User::create($userData);
+        toast('Data Pengguna Berhasil Ditambah','success');
         return redirect()->to('user')->with('success', 'User created successfully.');
     }
     //
@@ -67,6 +69,7 @@ class UserController extends Controller
         }
 
         $user->update($userData);
+        toast('Data Pengguna Berhasil Diubah','success');
         return redirect()->to('user')->with('success', 'User updated successfully.');
     }
     //
@@ -76,4 +79,5 @@ class UserController extends Controller
         $user->delete();
         return redirect()->to('user')->with('success', 'User deleted successfully.');
     }
+    
 }

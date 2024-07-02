@@ -86,11 +86,11 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
+<!-- jQuery --> 
 
 <!-- AdminLTE App -->
 @include('layouts.inc.js')
-{{-- @include('sweetalert::alert') --}}
+@include('sweetalert::alert')
 <script>
     $('.show_confirm').click(function(event){
         let form = $(this).closest('form');

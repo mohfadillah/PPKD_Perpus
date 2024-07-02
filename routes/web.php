@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\LoginController;
@@ -17,7 +19,12 @@ Route::get('actionLogout', [\App\Http\Controllers\LoginController::class, 'actio
 Route::resource('dashboard', DashboardController::class);
 Route::resource('level', LevelController::class);
 Route::resource('user', UserController::class);
+Route::resource('anggota', AnggotaController::class);
+Route::resource('buku', BukuController::class);
 
 // Route::middleware(['auth', 'Administrator'])->group(function () {
 //     Route::get('user', [UserController::class, 'index']);
 // });
+
+
+

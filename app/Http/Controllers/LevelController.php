@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Level;
 use Illuminate\Http\Request;
+use Alert;
 
 class LevelController extends Controller
 {
@@ -31,6 +32,7 @@ class LevelController extends Controller
     {
         Level::create($request->all());
         // Alert::success('Success', 'Data Added Successfully');
+        toast('Data Level Berhasil Ditambah','success');
         return redirect()->to('level');
     }
 
@@ -61,6 +63,7 @@ class LevelController extends Controller
             'keterangan' => $request->keterangan,
         ]);
         // toast('Data has been successfully updated', 'success');
+        toast('Data Level Berhasil Diubah','success');
         return redirect()->to('level');
     }
 

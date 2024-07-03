@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
-        <img src="{{ asset('assets/dist/img/logo.png') }}" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('assets/dist/img/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
         <span class="brand-text font-weight-light"><strong style="color: orangered">PERPUS</strong>TAKAAN</span>
     </a>
 
@@ -11,8 +11,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('assets/dist/img/dr.png') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="{{ asset('assets/dist/img/dr.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ auth()->user()->nama }}</a>
@@ -39,13 +38,14 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{route('dashboard.index')}}" class="nav-link">
+                    <a href="{{ route('dashboard.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
                 </li>
+
 
                 {{-- <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
@@ -103,25 +103,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('level.index')}}" class="nav-link">
+                            <a href="{{ route('level.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Level</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('buku.index')}}" class="nav-link">
+                            <a href="{{ route('buku.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Buku</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link">
+                            <a href="{{ route('user.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('anggota.index')}}" class="nav-link">
+                            <a href="{{ route('anggota.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Anggota</p>
                             </a>
@@ -129,7 +129,28 @@
                     </ul>
                 </li>
 
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Transaksi
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('peminjam.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Transaksi</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-header">Setting</li>
+
+
+
 
 
 

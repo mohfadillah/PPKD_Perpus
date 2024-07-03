@@ -47,7 +47,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">@yield('title')</h3>
+          <h3 class="card-title"><strong>@yield('title')</strong></h3>
 
           <div class="card-tools">
 
@@ -86,7 +86,7 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery --> 
+<!-- jQuery -->
 
 <!-- AdminLTE App -->
 @include('layouts.inc.js')

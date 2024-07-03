@@ -5,6 +5,8 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,11 @@ Route::resource('level', LevelController::class);
 Route::resource('user', UserController::class);
 Route::resource('anggota', AnggotaController::class);
 Route::resource('buku', BukuController::class);
+Route::resource('peminjam', PeminjamController::class);
+
+
+// Route::get('Peminjaman', [TransaksiController::class, 'Peminjaman']);
+// Route::get('tambahPeminjam', [TransaksiController::class, 'tambahPeminjam']);
 
 // Route::middleware(['auth', 'Administrator'])->group(function () {
 //     Route::get('user', [UserController::class, 'index']);

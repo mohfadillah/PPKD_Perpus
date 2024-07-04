@@ -4,7 +4,7 @@
 
 <div class="table-responsive">
     <div align="right" class="mb-3">
-        <a href="{{route ('peminjam.create')}}" class="btn btn-primary btn-sm"><i
+        <a href="{{ route('peminjam.create') }}" class="btn btn-primary btn-sm"><i
                 class="fas fa-plus mr-1"></i><strong>Add Peminjam</strong></a>
     </div>
 
@@ -24,11 +24,13 @@
                     <td>{{ $d->anggota->nama_anggota }}</td>
                     <td>{{ $d->no_transaksi }}</td>
                     <td>
+                        <a href="" class="btn btn-sm btn-warning text-darkblue">
+                            <i class="far fa-eye"> Detail</i></a>
                         <a href="#" class="btn btn-sm bg-success">
                             <i class="fas fa-edit"> Edit</i>
                         </a>
 
-                        <form method="POST" action="#" class="d-inline">
+                        <form method="POST" action="{{ route('peminjam.destroy', $d->id) }}" class="d-inline">
                             @csrf
                             <input type="hidden" value="DELETE" name="_method">
                             <button class="btn btn-danger btn-sm show_confirm" type="submit">

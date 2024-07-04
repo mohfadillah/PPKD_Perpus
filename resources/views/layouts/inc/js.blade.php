@@ -7,8 +7,4 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 
-<script>
-    $('.btn-add').click(function() {
-        alert('duar');
-    });
-</script>
+

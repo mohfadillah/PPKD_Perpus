@@ -8,7 +8,7 @@
             <label for="">Name Peminjam</label>
             <div class="row">
                 <div class="col-md-9">
-                    <select class="form-control" name="id_anggota">
+                    <select required class="form-control" name="id_anggota">
                         <option disable hidden value="">Select Anggota</option>
                         @foreach ($datas as $d)
                             <option value="{{ $d->id }}">{{ $d->nama_anggota }}</option>
@@ -16,7 +16,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <a class="btn btn-primary btn-sm" href="{{ route('anggota.create') }}" type="button">
+                    <a class="btn btn-primary btn-sm " href="{{ route('anggota.create') }}" type="button">
                         <i class="fas fa-plus"> Tambah Anggota Baru</i>
                     </a>
                 </div>
@@ -42,9 +42,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {{-- <tr>
                         <td>
-                            <select name="id_buku" id="">
+                            <select name="id_buku" class="form-control" id="">
                                 <option value="">Pilih Buku</option>
                                 @foreach ($bukus as $buku )
                                 <option value="{{$buku->id}}">{{$buku->nama_buku}}</option>
@@ -63,7 +63,7 @@
                         <td>
                             Hapus
                         </td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
         </div>

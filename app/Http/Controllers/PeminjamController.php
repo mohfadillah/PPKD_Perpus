@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Anggota;
 use App\Models\Buku;
+use App\Models\DetailPeminjam;
 use App\Models\Peminjam;
 
 
@@ -17,7 +18,7 @@ class PeminjamController extends Controller
     public function index()
     {
         $datas = Peminjam::with('anggota')->get();
-        return view ('peminjam.index', compact('datas'));
+        return view('peminjam.index', compact('datas'));
     }
 
     /**
@@ -26,8 +27,13 @@ class PeminjamController extends Controller
     public function create()
     {
         $kode_transaksi = Peminjam::orderBy('id', 'desc')->first();
+        if(isset($kode_transaksi)){
+            $urutan = $kode_transaksi->id;
+        } else {
+            $urutan = 0;
+        }
         $huruf = "TR";
-        $urutan = $kode_transaksi->id;
+        // $urutan = $kode_transaksi->id;
         $urutan++;
         $kode_transaksi = $huruf . date('dmY') . sprintf("%03s", $urutan);
         // $nextTransactionNumber = $kode_transaksi ? $kode_transaksi + 1 : 1;
@@ -35,7 +41,7 @@ class PeminjamController extends Controller
 
         $bukus = Buku::get();
         $datas = Anggota::orderBy('id', 'desc')->get();
-        return view ('peminjam.create', compact('datas', 'kode_transaksi', 'bukus'));
+        return view('peminjam.create', compact('datas', 'kode_transaksi', 'bukus'));
     }
 
     /**
@@ -43,10 +49,26 @@ class PeminjamController extends Controller
      */
     public function store(Request $request)
     {
-        Peminjam::create($request->all());
-        // Alert::success('Success', 'Data Added Successfully');
-        toast('Data Peminjam Berhasil Ditambah','success');
+        $peminjam = Peminjam::create([
+            'id_anggota' => $request->id_anggota,
+            'no_transaksi' => $request->no_transaksi,
+
+        ]);
+        foreach ($request->id_buku as $index => $id_buku) {
+            DetailPeminjam::create([
+                'id_peminjam' => $peminjam->id,
+                'id_buku' => $id_buku,
+                'tanggal_pinjam' => $request->tanggal_pinjam[$index],
+                'tanggal_pengembalian' => $request->tanggal_pengembalian[$index],
+                'keterangan' => $request->keterangan[$index],
+            ]);
+        };
+
+        toast('Data Peminjam Berhasil Ditambah', 'success');
         return redirect()->to('peminjam');
+
+        // Peminjam::create($request->all());
+        // Alert::success('Success', 'Data Added Successfully');
     }
 
     /**
@@ -62,7 +84,6 @@ class PeminjamController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -78,6 +99,8 @@ class PeminjamController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        Peminjam::where('id', $id)->delete();
+        // Alert::success('Success', 'Data Deleted Successfully');
+        return redirect()->to('peminjam');
     }
 }

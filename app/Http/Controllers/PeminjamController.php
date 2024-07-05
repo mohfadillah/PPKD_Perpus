@@ -6,6 +6,7 @@ use App\Models\Anggota;
 use App\Models\Buku;
 use App\Models\DetailPeminjam;
 use App\Models\Peminjam;
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
@@ -76,7 +77,16 @@ class PeminjamController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $details = DB::table('detail_peminjams')
+        ->select('detail_peminjams.*', 'anggotas.nama_anggota', 'bukus.nama_buku')
+        ->join('anggotas', 'detail_peminjams.id_peminjam', '=', 'anggotas.id')
+        ->join('bukus', 'detail_peminjams.id_buku', '=', 'bukus.id')
+        ->where('detail_peminjams.id_peminjam', '=', $id)
+        ->get();
+
+        $bukus = Buku::orderBy('id', 'desc')->get();
+        $anggotas = Anggota::orderBy('id', 'desc')->get();
+        return view ('print.print-page', compact('details', 'bukus', 'anggotas'));
     }
 
     /**

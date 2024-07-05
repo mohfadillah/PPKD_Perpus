@@ -4,8 +4,8 @@
 
 <div class="table-responsive">
     <div align="right" class="mb-3">
-        <a href="{{ route('peminjam.create') }}" class="btn btn-primary btn-sm"><i
-                class="fas fa-plus mr-1"></i><strong>Add Peminjam</strong></a>
+        <a href="{{ route('peminjam.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus mr-1"></i><strong>Add
+                Peminjam</strong></a>
     </div>
 
     <table class="table table-bordered">
@@ -24,7 +24,7 @@
                     <td>{{ $d->anggota->nama_anggota }}</td>
                     <td>{{ $d->no_transaksi }}</td>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning text-darkblue">
+                        <a href="{{ route('print-page.show', $d->id_anggota) }}" class="btn btn-sm btn-warning text-darkblue">
                             <i class="far fa-eye"> Detail</i></a>
                         <a href="#" class="btn btn-sm bg-success">
                             <i class="fas fa-edit"> Edit</i>

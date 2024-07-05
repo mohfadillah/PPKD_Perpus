@@ -42,28 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- <tr>
-                        <td>
-                            <select name="id_buku" class="form-control" id="">
-                                <option value="">Pilih Buku</option>
-                                @foreach ($bukus as $buku )
-                                <option value="{{$buku->id}}">{{$buku->nama_buku}}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                            <input type="date" name="tanggal_pinjam" class="form-control">
-                        </td>
-                        <td>
-                            <input type="date" name="tanggal_pengembalian" class="form-control">
-                        </td>
-                        <td>
-                            <input type="text" name="keterangan" class="form-control">
-                        </td>
-                        <td>
-                            Hapus
-                        </td>
-                    </tr> --}}
+                    
                 </tbody>
             </table>
         </div>

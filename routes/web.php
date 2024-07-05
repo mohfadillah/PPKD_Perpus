@@ -25,6 +25,8 @@ Route::resource('anggota', AnggotaController::class);
 Route::resource('buku', BukuController::class);
 Route::resource('peminjam', PeminjamController::class);
 
+Route::get('/print-page/{id}', [PeminjamController::class, 'show'])->name('print-page.show');
+
 
 // Route::get('Peminjaman', [TransaksiController::class, 'Peminjaman']);
 // Route::get('tambahPeminjam', [TransaksiController::class, 'tambahPeminjam']);

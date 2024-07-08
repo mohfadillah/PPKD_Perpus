@@ -13,6 +13,6 @@ class DetailPeminjam extends Model
         return $this->belongsTo(Anggota::class, 'id_peminjam', 'id');
     }
     public function buku (){
-        return $this->belongsTo(Anggota::class, 'id_buku', 'id');
+        return $this->belongsTo(Buku::class, 'id_buku', 'id');
     }
 }

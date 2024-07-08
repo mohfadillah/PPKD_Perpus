@@ -24,7 +24,7 @@
                     <td>{{ $d->anggota->nama_anggota }}</td>
                     <td>{{ $d->no_transaksi }}</td>
                     <td>
-                        <a href="{{ route('print-page.show', $d->id_anggota) }}" class="btn btn-sm btn-warning text-darkblue">
+                        <a href="{{ route('detail-pinjaman.show', $d->id) }}" class="btn btn-sm btn-warning text-darkblue">
                             <i class="far fa-eye"> Detail</i></a>
                         <a href="#" class="btn btn-sm bg-success">
                             <i class="fas fa-edit"> Edit</i>

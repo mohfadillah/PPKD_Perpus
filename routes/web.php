@@ -3,11 +3,13 @@
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+use App\Models\DetailPeminjam;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -25,7 +27,7 @@ Route::resource('anggota', AnggotaController::class);
 Route::resource('buku', BukuController::class);
 Route::resource('peminjam', PeminjamController::class);
 
-Route::get('/print-page/{id}', [PeminjamController::class, 'show'])->name('print-page.show');
+Route::get('/detail-pinjaman/{id}', [DetailController::class, 'show'])->name('detail-pinjaman.show');
 
 
 // Route::get('Peminjaman', [TransaksiController::class, 'Peminjaman']);

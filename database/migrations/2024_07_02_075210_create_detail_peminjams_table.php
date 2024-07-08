@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('detail_peminjams', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_peminjam');
-            $table->integer('id_buku');
+            $table->unsignedBigInteger('id_peminjam');
+            $table->foreign('id_peminjam')->references('id')->on('anggotas');
+            $table->unsignedBigInteger('id_buku');
+            $table->foreign('id_buku')->references('id')->on('bukus');
             $table->dateTime('tanggal_pinjam');
             $table->dateTime('tanggal_pengembalian');
             $table->text('keterangan');
